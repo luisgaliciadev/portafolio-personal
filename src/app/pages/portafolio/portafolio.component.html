@@ -1,0 +1,215 @@
+<section class="ae-container-fluid rk-main">
+    <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">      
+      <div align="center" *ngIf="loading" >       
+        <strong>Cargando</strong>       
+        <div class="loader loader--style1" title="0">
+          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+          <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+            s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+            c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+          <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+            C22.32,8.481,24.301,9.057,26.013,10.047z">
+            <animateTransform attributeType="xml"
+              attributeName="transform"
+              type="rotate"
+              from="0 20 20"
+              to="360 20 20"
+              dur="0.5s"
+              repeatCount="indefinite"/>
+            </path>
+          </svg>
+        </div>
+        <span>Por Favor Espere</span>
+      </div>
+      
+      <div *ngIf="!loading" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4" >       
+        <a *ngFor="let item of portafolio" routerLink="/item/{{item.id}}" class="rk-item ae-masonry__item pointer">
+          <img src="{{item.image}}" alt="">
+          <div class="item-meta">
+            <h2>{{item.name}}</h2>
+            <!-- <p>{{item.description}}</p> -->
+            <p>{{item.type}}</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </section>
+
+  <!-- <section class="ae-container-fluid rk-main">
+    <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
+
+      <div class="ae-grid">
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/briane-smart.jpg" alt="">
+            <div class="item-meta">
+              <h2>BRIANE Smart</h2>
+              <p style="text-align: justify;">Sistema web para la gestión administrativa y operativa en el área de transporte de carga. Entre los módulos que se pueden resaltar esta la consulta de indicadores de gestión (Dashboard) referente a las solicitudes de servicios y las operaciones de transporte de carga.</p>
+              <p><b>Tecnologías:</b> JavaScript, Angular 8+, Node.js, Express.js, Microsoft SQL Server, MongoDB, Microsoft Power BI.</p>
+              <p class="au-underline rk-portfolio-inner-website ">
+                <a href="http://66.23.235.30:8080/briane" target="_blank" class="ae-kappa"><b>BRIANE Smart</b></a>
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/serval-notificaciones.jpg" alt="">
+            <div class="item-meta">
+              <h2>Notificaciones - SERVAL</h2>
+              <p style="text-align: justify;">Servicio automatizado de notificaciones de estatus de envió de comprobantes electrónicos.</p>
+              <p><b>Tecnologías:</b> Microsoft SQL Server</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="ae-grid">
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/briane-app.jpg" alt="">
+            <div class="item-meta">
+              <h2>BrianeApp</h2>
+              <p style="text-align: justify;">Aplicación móvil para realizar consultas de indicadores de gestión, consultas de viajes y comisión por viaje de conductor. Registro de facturas de gatos operativos a través del escaneo de código QR.</p>
+              <p><b>Tecnologías:</b> JavaScript, Angular 8+, Ionic 4+, Node.js, Express.js, Microsoft SQL Server, Microsoft Power BI.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/sric-notificaciones.jpg" alt="">
+            <div class="item-meta">
+              <h2>Notificaciones - SRIC</h2>
+              <p style="text-align: justify;">Sistema web que permite el registro de información de clientes y proveedores. También permite el registro, control, renovación y vencimientos de productos y servicios de tecnología de información y comunicaciones (TICS) adquiridos por los diferentes clientes. Registro de información de acceso y credenciales de equipos de TICS.</p>
+              <p><b>Tecnologías:</b> Microsoft SQL Server</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="ae-grid">
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/consulta-web-serval.jpg" alt="">
+            <div class="item-meta">
+              <h2>Consulta de Documentos Electornicos - SERVAL</h2>
+              <p style="text-align: justify;">Sitio web para descargar los comprobantes electrónicos relacionado con una venta en el sistema SERVAL. Se puede realizar la descarga de PDF y XML de las facturas, boletas, nota de créditos y débitos.</p>
+              <p style="text-align: justify;"><b>Tecnologías:</b> PHP, HTML, Bootstrap, CSS</p>
+              <p class="au-underline rk-portfolio-inner-website ">
+                <a href="https://www.cyberpowerperu.com/factura" target="_blank" class="ae-kappa"><b>Consulta Web SERVAL</b></a>
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/serval.jpg" alt="">
+            <div class="item-meta">
+              <h2>SERVAL - Sistemas de Gestión Administrativa</h2>
+              <p style="text-align: justify;">Es un sistema de gestión administrativa que integra diferentes procesos de una empresa adaptable a cualquier tipo de negocio. Entre diferentes módulos que posee el sistema se puede mencionar administración productos y servicios, agenda de clientes y proveedores, registro y administración de compras, módulo de venta el cual permite emitir comprobantes electrónicos ante la SUNAT.</p>
+              <p><b>Tecnologías:</b> Visual Fox Pro 9.0, Microsoft SQL Server</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="ae-grid">
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/sric.jpg" alt="">
+            <div class="item-meta">
+              <h2>Sistema de Registro de Información de Clientes - SRIC</h2>
+              <p style="text-align: justify;">Sistema web que permite el registro de información de clientes y proveedores. Registro, control, renovación y vencimientos de productos y servicios de tecnología de información y comunicaciones (TICS) adquiridos por los diferentes clientes. Registro de información de acceso y credenciales de equipos de TICS.</p>
+              <p><b>Tecnologías:</b> PHP, HTML, Bootstrap, CSS, Microsoft SQL Server</p>
+              <p class="au-underline rk-portfolio-inner-website ">
+                <a href="https://www.cyberpowerperu.com/sric" target="_blank" class="ae-kappa"><b>SRIC</b></a>
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/sif.jpg" alt="">
+            <div class="item-meta">
+              <h2>Sistema de Integrado de Facturación - SIF</h2>
+              <p style="text-align: justify;">Sistema web que permite integrar en una sola plataforma las diferentes ventas de servicios portuarios prestados por la empresa Bolivariana de Puertos, S.A. Es importante mencionar en dicha empresa se manejan diferentes sistemas por medio de los cuales se emiten los presupuestos y estos luego son transformados en una factura a través del sistema SIF.</p>
+              <p><b>Tecnologías:</b> PHP, HTML, Bootstrap, CSS, Microsoft SQL Server</p>
+              <p><b>Colaboradores:</b> Erick Mosquera, Eliesser Freites, Lenin Batista, Katerine Herrera.</p>
+              <p class="au-underline rk-portfolio-inner-website ">
+                <a href="http://ingresos.bolipuertos.gob.ve/" target="_blank" class="ae-kappa"><b>SIF</b></a>
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="ae-grid">     
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/ssp.jpg" alt="">
+            <div class="item-meta">
+              <h2>Sistema de Solicitud de Servicios Portuarios - SSP</h2>
+              <p style="text-align: justify;">Sistema web que permite realizar las solicitudes de servicios portuarios ante la empresa Bolivariana de Puertos, S.A. También se puede solicitar el presupuesto por los servicios solicitados para su posterior facturación.</p>
+              <p><b>Tecnologías:</b> PHP, HTML, Bootstrap, CSS, Microsoft SQL Server</p>
+              <p><b>Colaboradores:</b> Erick Mosquera, Eliesser Freites, Lenin Batista, Katerine Herrera.</p>
+              <p class="au-underline rk-portfolio-inner-website ">
+                <a href="http://ventas.bolipuertos.gob.ve/" target="_blank" class="ae-kappa"><b>SSP</b></a>
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/soe.jpg" alt="">
+            <div class="item-meta">
+              <h2>Sistema de Registro de Operaciones de Estiba - SOE</h2>
+              <p style="text-align: justify;">Sistema web que permite realizar las solicitudes de servicios portuarios pestados por la empresa Bolivariana de Puertos, S.A</p>
+              <p><b>Tecnologías:</b> Visual Fox Pro 9.0, Microsoft SQL Server</p>
+              <p><b>Colaboradores:</b> Erick Mosquera, Lenin Batista</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="ae-grid">     
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/estatus-bl-sbs.jpg" alt="">
+            <div class="item-meta">
+              <h2>Estatus de BL - SBS</h2>
+              <p style="text-align: justify;">Sistema web que permite ver en tiempo real el estatus de las operaciones de descarga y despacho de mercancia a granel que se realizan en la empresa Bolivariana de Puertos S.A.</p>
+              <p><b>Tecnologías:</b> Visual Fox Pro 9.0, Microsoft SQL Server</p>
+              <p><b>Colaboradores:</b> Erick Mosquera,Jesus Valoz, Lenin Batista, Pedro Sanchez</p>
+              <p class="au-underline rk-portfolio-inner-website ">
+                <a href="http://puertocabello.bolipuertos.gob.ve/#" target="_blank" class="ae-kappa"><b>Estatus de BL - SBS</b></a>
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="ae-grid">     
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/sbs.jpg" alt="">
+            <div class="item-meta">
+              <h2>Sistemas de Basculas y Silos - SBS</h2>
+              <p style="text-align: justify;">Sistema web que permite realizar las solicitudes de servicios portuarios pestados por la empresa Bolivariana de Puertos, S.A</p>
+              <p><b>Tecnologías:</b> PHP, HTML, Bootstrap, CSS, Microsoft SQL Server</p>
+              <p ><b>Colaboradores:</b> Erick Mosquera, Eliesser Freites, Lenin Batista, Katerine Herrera.</p>
+              <p class="au-underline rk-portfolio-inner-website ">
+                <a href="http://ventas.bolipuertos.gob.ve/" target="_blank" class="ae-kappa"><b>SSP</b></a>
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="ae-grid__item item-lg--auto">
+          <a style="border: solid 1px #ccc;"  class="rk-item pointer"><img src="assets/img/portafolio-items/siscoes.jpg" alt="">
+            <div class="item-meta">
+              <h2>SISCOES</h2>
+              <p style="text-align: justify;">Sistema web que permite realizar las solicitudes de servicios portuarios pestados por la empresa Bolivariana de Puertos, S.A</p>
+              <p><b>Tecnologías:</b> Visual Fox Pro 9.0, Microsoft SQL Server</p>
+              <p><b>Colaboradores:</b> Erick Mosquera,Jesus Valoz, Lenin Batista, Pedro Sanchez</p>
+              <p class="au-underline rk-portfolio-inner-website ">
+                <a href="http://puertocabello.bolipuertos.gob.ve/#" target="_blank" class="ae-kappa"><b>Estatus de BL - SBS</b></a>
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </section> -->
+  <!-- </section> -->

@@ -1,0 +1,39 @@
+<header class="ae-container-fluid ae-container-fluid--full rk-header ">
+    <input type="checkbox" id="mobile-menu" class="rk-mobile-menu">
+    <label for="mobile-menu">
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#bar"></use>
+      </svg>
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#bar"></use>
+      </svg>
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#bar"></use>
+      </svg>
+    </label>
+    <div class="ae-container-fluid rk-topbar">
+      <h1 class="rk-logo"><a href="index.html">{{_DataPageService.pageInfo.name}}<sup>{{_DataPageService.pageInfo.title}}</sup></a></h1>
+      <nav class="rk-navigation">
+        <ul class="rk-menu">
+          <li routerLinkActive="active" class="rk-menu__item"><a routerLink="/home" class="rk-menu__link">Inicio</a>
+          </li>
+          <li routerLinkActive="active" class="rk-menu__item"><a routerLink="/portafolio" class="rk-menu__link">Portfolio</a>
+          </li>
+          <li routerLinkActive="active" class="rk-menu__item"><a routerLink="/technologies" class="rk-menu__link">Tecnologías</a>
+          </li>
+          <li class="rk-menu__item"><a class="rk-menu__link">Acerca</a>
+            <nav class="rk-menu__sub">
+              <ul class="rk-container">
+                <li class="rk-menu__item"><a routerLink="/bio" class="rk-menu__link">Bio</a></li>
+                <li class="rk-menu__item"><a routerLink="/education" class="rk-menu__link">Educación</a></li>
+                <li class="rk-menu__item"><a routerLink="/experience" class="rk-menu__link">Experiencia</a></li>
+                <li class="rk-menu__item"><a routerLink="/resume" class="rk-menu__link">Resumen</a></li>
+              </ul>
+            </nav>
+          </li>
+          <li class="rk-menu__item"><a routerLink="/contact" class="rk-menu__link">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>

@@ -1,0 +1,34 @@
+<div class="ae-container-fluid ae-container-fluid--inner rk-main">    
+    <div class="ae-grid">
+      <div class="ae-grid__item item-lg-5">
+        <div id="map-container">
+          <div id="map">
+            <img src="assets/img/contact2.jpg">
+          </div>
+        </div>
+      </div>
+      <div class="ae-grid__item item-lg-2">
+      </div>
+      <div class="ae-grid__item item-lg-5">
+        <div class="ae-grid ae-grid--collapse">         
+          <div class="ae-grid__item item-lg-10 au-xs-ta-center au-lg-ta-left">
+            <h4 class="ae-u-bolder au-mb-3 conatct__title">Contactame</h4>
+            <p class="au-mb-4 contact__desc">Hola, realiza tus consultas usando los siguientes canales digitales.</p>
+            <p> 
+                <span class="contact__phone">
+                    <span class="rk-light-color">Telefono  </span> {{_DataPageService.pageInfo.phone}}
+                </span>              
+                <span class="contact__email au-block au-truncate"> 
+                    <span class="rk-light-color">WhatsApp &nbsp;&nbsp; </span><a class="pointer" (click)="abrirWs()">{{_DataPageService.pageInfo.phone}}</a>
+                </span>               
+                <span class="contact__email au-block au-truncate"> 
+                    <span class="rk-light-color">Email &nbsp;&nbsp; </span>{{_DataPageService.pageInfo.email}}
+                </span>
+            </p>
+            <p class="au-mb-4 contact__addr">{{_DataPageService.pageInfo.address}}<br>{{_DataPageService.pageInfo.city}}, {{_DataPageService.pageInfo.country}}</p>
+          </div>
+          <div class="contact_spacer au-none au-lg-block"></div>
+        </div>
+      </div>
+    </div>
+</div>

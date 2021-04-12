@@ -1,0 +1,28 @@
+<footer class="ae-container-fluid rk-footer ">
+    <div class="ae-grid ae-grid--collapse">
+      <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
+        <ul class="rk-menu rk-footer-menu">
+          <li class="rk-menu__item"><a routerLink="/home" class="rk-menu__link">Inicio</a>
+          </li>
+          <li class="rk-menu__item"><a routerLink="/portafolio" class="rk-menu__link">Portafolio</a>
+          </li>
+          <li class="rk-menu__item"><a routerLink="/contact" class="rk-menu__link">Contacto</a>
+          </li>
+        </ul>
+        <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">{{year}} {{_DataPageService.pageInfo.name}}</span> Todos los Derechos Reservados.</p>
+      </div>
+      <div class="ae-grid__item item-lg-4 au-xs-ta-center">
+          <a href="{{_DataPageService.pageInfo.linkedin}}" target="_blank">
+            <i class="mdi mdi-linkedin" style="font-size: 35px"></i>
+          </a> 
+
+          <a href="{{_DataPageService.pageInfo.gitHub}}" target="_blank">
+            <i class="mdi mdi-github" style="font-size: 35px"></i>
+          </a>     
+        </div>
+      <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
+        <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold">Email: </span><span class="ae-u-bolder"> <a href="#0" class="rk-dark-color ">{{_DataPageService.pageInfo.email}} </a></span></p>
+        <!-- <p class="rk-footer__text rk-footer__by">Theme by <a href="http://pixeden.com" class="ae-u-bolder">Pixeden.</a></p> -->
+      </div>
+    </div>
+  </footer>
