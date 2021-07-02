@@ -1,4 +1,4 @@
-# PortafolioLuisgalicia
+# Portafolio
 
 Pagina web para mostrar informacion personal y trayectorioa profesional
 
