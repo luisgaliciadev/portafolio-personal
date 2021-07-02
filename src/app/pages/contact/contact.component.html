@@ -1,4 +1,5 @@
-<div class="ae-container-fluid ae-container-fluid--inner rk-main">    
+<div class="ae-container-fluid ae-container-fluid--inner rk-main">  
+  <br>  
     <div class="ae-grid">
       <div class="ae-grid__item item-lg-5">
         <div id="map-container">
@@ -12,23 +13,75 @@
       <div class="ae-grid__item item-lg-5">
         <div class="ae-grid ae-grid--collapse">         
           <div class="ae-grid__item item-lg-10 au-xs-ta-center au-lg-ta-left">
-            <h4 class="ae-u-bolder au-mb-3 conatct__title">Contactame</h4>
+            <h3 class="ae-u-bolder au-mb-3 conatct__title">Contactame</h3>
             <p class="au-mb-4 contact__desc">Hola, realiza tus consultas usando los siguientes canales digitales.</p>
             <p> 
                 <span class="contact__phone">
-                    <span class="rk-light-color">Telefono  </span> {{_DataPageService.pageInfo.phone}}
+                    <i class="mdi mdi-phone"></i> 
+                    <span class="rk-light-color"> Telefono  </span> {{_DataPageService.pageInfo.phone}}
                 </span>              
                 <span class="contact__email au-block au-truncate"> 
-                    <span class="rk-light-color">WhatsApp &nbsp;&nbsp; </span><a class="pointer" (click)="abrirWs()">{{_DataPageService.pageInfo.phone}}</a>
+                    <i class="mdi mdi-whatsapp"></i> 
+                    <span class="rk-light-color"> WhatsApp &nbsp;&nbsp; </span><a class="pointer" (click)="abrirWs()">{{_DataPageService.pageInfo.phone}}</a>
                 </span>               
                 <span class="contact__email au-block au-truncate"> 
-                    <span class="rk-light-color">Email &nbsp;&nbsp; </span>{{_DataPageService.pageInfo.email}}
+                    <i class="mdi mdi-email"></i> 
+                    <span class="rk-light-color"> Email &nbsp;&nbsp; </span>{{_DataPageService.pageInfo.email}}
                 </span>
+                <span class="contact__email au-block au-truncate">                   
+                    <i class="mdi mdi-crosshairs-gps"></i> 
+                    {{_DataPageService.pageInfo.address}} {{_DataPageService.pageInfo.city}}, {{_DataPageService.pageInfo.country}}
+              </span>
             </p>
-            <p class="au-mb-4 contact__addr">{{_DataPageService.pageInfo.address}}<br>{{_DataPageService.pageInfo.city}}, {{_DataPageService.pageInfo.country}}</p>
           </div>
-          <div class="contact_spacer au-none au-lg-block"></div>
+          <div class="contact_spacer au-none au-lg-block"></div>          
+          <div class="ae-grid ae-grid--collapse">            
+            <div *ngIf="!loading" class="ae-grid__item item-lg-12">
+              <h4 class="ae-u-bolder au-mb-3 conatct__title">Enviar Correo</h4>
+              <form ngNativeValidate #form="ngForm" (ngSubmit)="sendMail()" id="contact-form" class="ae-form--full">
+                <input [(ngModel)]="nombre" name="nombre" type="text" placeholder="* Nombre" required>
+                <input [(ngModel)]="email" name="email" type="email" placeholder="* Correo" required>
+                <input [(ngModel)]="asunto" name="asunto" type="text" placeholder="* Asunto" required>
+                <textarea [(ngModel)]="mensaje" name="mensaje" placeholder="Mensaje ..." cols="30" rows="4" required></textarea>
+                <p class="au-xs-ta-right au-pt-4 group-buttons">
+                  <button type="submit" class="arrow-button arrow-button--right arrow-button--out">
+                    Enviar
+                    <span class="arrow-cont">
+                      <svg>
+                        <use xlink:href="assets/img/symbols.svg#arrow"></use>
+                      </svg>
+                    </span>
+                  </button>
+                </p>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
+      </div>      
     </div>
+    <div *ngIf="loading" align="center">   
+      <br>
+      <br>
+      <br>    
+      <strong>Cargando</strong>       
+      <div class="loader loader--style1" title="0">
+        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+        <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+          s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+          c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+          C22.32,8.481,24.301,9.057,26.013,10.047z">
+          <animateTransform attributeType="xml"
+            attributeName="transform"
+            type="rotate"
+            from="0 20 20"
+            to="360 20 20"
+            dur="0.5s"
+            repeatCount="indefinite"/>
+          </path>
+        </svg>
+      </div>
+      <span>Por Favor Espere</span>
+    </div>    
 </div>

@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'experience', component: ExperienceComponent},
   {path: 'resume', component: ResumeComponent},
   {path: 'contact', component: ContactComponent},  
-  {path: 'item/:id', component: ItemComponent},
+  {path: 'detalle/:id', component: ItemComponent},
   {path: '**',pathMatch: 'full', redirectTo: 'home'}
 ];
 

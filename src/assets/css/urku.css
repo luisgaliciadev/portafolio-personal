@@ -196,20 +196,26 @@ body {
   -webkit-transform-origin: center left;
       -ms-transform-origin: center left;
           transform-origin: center left;
+         
 }
 .rk-mobile-menu + label svg:nth-of-type(3) {
   -webkit-transform-origin: center left;
       -ms-transform-origin: center left;
           transform-origin: center left;
+          
 }
 @media (min-width: 64em) {
   .rk-mobile-menu + label {
     display: none;
+    
   }
 }
+
 .rk-mobile-menu:checked + label,
 .rk-mobile-menu + label:hover {
   color: #a0a0a0;
+  width: 100px;
+  height: 100px;
 }
 .rk-mobile-menu:checked + label svg:nth-of-type(1) {
   -webkit-transform: rotate(45deg);
@@ -226,7 +232,57 @@ body {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
+          /* margin-top: 49px;
+          margin-left: 1px; */
 }
+
+/* @media screen and (min-width: 576px) {
+  .rk-mobile-menu + label svg {
+    height: 4px;
+    width: 20px;
+  }
+
+  .rk-mobile-menu:checked + label svg:nth-of-type(3) {
+      margin-top: 49px;
+      margin-left: 1px;
+  }
+} */
+
+/* @media (max-width: 360px) {
+  .rk-mobile-menu + label svg {
+    height: 16px;
+    width: 120px;
+  }
+
+  .rk-mobile-menu:checked + label svg:nth-of-type(3) {
+      margin-top: 49px;
+      margin-left: 1px;
+  }
+} */
+/* 
+@media (max-width: 1024px) {
+  .rk-footer-menu .rk-menu__link {
+    font-size: 1rem;
+  }
+} */
+
+/* @media screen and (min-width: 768px) {
+  .rk-footer-menu .rk-menu__link {
+    font-size: 1.25rem;
+  }
+} */
+
+/* @media screen and (max-width: 360px) {
+  .rk-logo {
+    font-size: 0.5rem;
+    color: red;
+  }
+
+  .rk-logo sup {
+    font-size: 0.3rem;
+    color: red;
+  }
+} */
 
 .rk-footer {
   margin-top: 10.5rem;
