@@ -24,7 +24,7 @@
       </div>
       
       <div *ngIf="!loading" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4" >       
-        <a *ngFor="let item of portafolio" routerLink="/item/{{item.id}}" class="rk-item ae-masonry__item pointer">
+        <a *ngFor="let item of portafolio" [routerLink]="(['/detalle',item.id])" class="rk-item ae-masonry__item pointer">
           <img src="{{item.image}}" alt="">
           <div class="item-meta">
             <h2>{{item.name}}</h2>

@@ -16,4 +16,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  hideMenu() {
+    document.getElementById('menuMobile').click();
+  }
+
 }

@@ -1,4 +1,5 @@
-<section class="">
+<section>
+    <br>
     <br>
     <div align="center" *ngIf="loading" >   
       <br>
@@ -25,7 +26,6 @@
       </div>
       <span>Por Favor Espere</span>
     </div>
-
     <div *ngIf="!loading">
       <div class="ae-container-fluid">
         <br>
@@ -48,17 +48,19 @@
         <div class="ae-grid ae-grid--collapse au-xs-ptp-1">
           <div class="ae-grid__item item-lg-5 au-lg-ptp-1">
             <p style="text-align: justify;" class="ae-eta">{{item.description}}</p>
-            <p *ngIf="item.description2" style="text-align: justify;" class="ae-eta">{{item.description2}}</p>
+            <p *ngIf="item.description2" style="text-align: justify;"  class="ae-eta">{{item.description2}}</p>
           </div>
           <div class="ae-grid__item item-lg-6 item-lg--offset-1">
             <img *ngIf="item.image" src="{{item.image}}" alt="Urku Portfolio">
           </div>
         </div>
         <div *ngIf="item.image2" class="ae-grid ae-grid--collapse">
-          <div *ngIf="item.image2" class="ae-grid__item item-lg-8"><img src="{{item.image2}}" alt="Urku Portfolio"></div>
-          <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">
-            <p style="text-align: justify;">{{item.description3}}</p>
-            <p style="text-align: justify;" class="au-mb-3">{{item.description4}}</p>
+          <div *ngIf="item.image2" class="ae-grid__item item-lg-7">
+            <img src="{{item.image2}}" alt="Urku Portfolio">
+          </div>
+          <div class="ae-grid__item item-lg-4 item-lg--offset-1">
+            <p style="text-align: justify;" class="ae-eta">{{item.description3}}</p>
+            <p style="text-align: justify;" class="ae-eta">{{item.description4}}</p>
           </div>
         </div>
         <div class="ae-grid ae-grid--collapse au-xs-ptp-1 au-xs-pbp-1">
@@ -66,7 +68,6 @@
             <h4 class="ae-u-bolder">Tecnologías usadas en el desarrollo:</h4>
             <p style="text-align: justify;" class="ae-eta">{{item.technologies}}</p>
           </div>
-  
           <div *ngIf="item.collaborators" class="ae-grid__item item-lg-8 item-lg--offset-2">
             <h4 class="ae-u-bolder">Colaboradores:</h4>
             <p style="text-align: justify;" class="ae-eta">{{item.collaborators}}</p>
@@ -75,9 +76,9 @@
       </div>
       <div class="ae-container-fluid au-pt-4 au-pb-4">
         <div class="group-buttons"><a routerLink="/portafolio" class="au-mt-2 arrow-button arrow-button--right">Volver a Portafolio<span class="arrow-cont">
-              <svg>
-                <use xlink:href="assets/img/symbols.svg#arrow"></use>
-              </svg></span></a></div>
+          <svg>
+            <use xlink:href="assets/img/symbols.svg#arrow"></use>
+          </svg></span></a></div>
       </div>
     </div>  
 </section>

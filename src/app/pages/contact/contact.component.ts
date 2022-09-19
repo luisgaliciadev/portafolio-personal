@@ -7,6 +7,11 @@ import { DataPageService } from 'src/app/services/data-page.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  nombre = '';
+  asunto = '';
+  email = '';
+  mensaje = '';
+  loading = false;
 
   constructor(
     public _DataPageService: DataPageService
@@ -17,6 +22,28 @@ export class ContactComponent implements OnInit {
 
   abrirWs() {
     window.open(this._DataPageService.pageInfo.linkWhatsApp);   
+  }
+
+  sendMail() {
+    this.loading = true;
+    let data = {
+      "nombre": this.nombre,
+      "correo": this.email,
+      "asunto": this.asunto,
+      "mensaje": this.mensaje
+    };
+    this._DataPageService.sendMail(data).subscribe(
+      (response) => {
+        this.nombre = '';
+        this.email = '';
+        this.asunto = '';
+        this.mensaje = '';
+        this.loading = false;
+      },
+      (error) => {
+        this.loading = false;
+      }
+    )
   }
 
 }

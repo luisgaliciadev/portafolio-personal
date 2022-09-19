@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "portafolio-luisgalicia"
+    }
+  },
+  "defaultProject": "portafolio-luisgalicia",
+  "cli": {
+    "analytics": "cdd85b5a-b631-4908-b693-57f8c3de4b1f"
+  }
 }
