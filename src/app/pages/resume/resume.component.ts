@@ -9,7 +9,7 @@ export class ResumeComponent implements OnInit {
   pdfSrc: string;
 
   constructor() {
-  this.pdfSrc = '../assets/img/resumeLuisGalicia.pdf'
+  this.pdfSrc = '../assets/img/resumenLuisGalicia.pdf'
    }
 
   ngOnInit(): void {
